@@ -52,6 +52,7 @@ export default function PostCard({ post, refresh, userId }) {
           <img
             src={`https://social-backend-2pe5.onrender.com/${post.image}`}
             className="img-fluid mt-2 rounded"
+            style={{ width: "100%", maxHeight: "400px", objectFit: "cover" }}
             alt="post"
           />
         )}

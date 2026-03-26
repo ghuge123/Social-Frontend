@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <AppBar position="static">
-      <Toolbar>
+      <Toolbar className="container">
         <Typography sx={{ flexGrow: 1 }}>
           Social Feed
         </Typography>

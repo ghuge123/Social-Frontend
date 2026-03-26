@@ -42,17 +42,23 @@ export default function Feed() {
     <>
       <Navbar />
 
-      <div className="container mt-4" style={{ maxWidth: "600px" }}>
-        <CreatePost refresh={fetchPosts} />
+      <div className="container mt-4">
+        <div className="row justify-content-center">
+          <div className="col-12 col-sm-10 col-md-8 col-lg-6">
 
-        {posts.map((post) => (
-          <PostCard
-            key={post._id}
-            post={post}
-            refresh={fetchPosts}
-            userId={userId}
-          />
-        ))}
+            <CreatePost refresh={fetchPosts} />
+
+            {posts.map((post) => (
+              <PostCard
+                key={post._id}
+                post={post}
+                refresh={fetchPosts}
+                userId={userId}
+              />
+            ))}
+
+          </div>
+        </div>
       </div>
     </>
   );
