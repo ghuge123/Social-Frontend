@@ -11,6 +11,7 @@ export default function Navbar() {
     const checkAuth = async () => {
       try {
         const data = await request("/users/me"); // no localhost
+        console.log(data);
         setIsLoggedIn(data.isLoggedIn);
       } catch (err) {
         setIsLoggedIn(false);
