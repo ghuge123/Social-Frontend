@@ -1,5 +1,6 @@
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 import { useEffect, useState } from "react";
+import { request } from "../services/api"; // use central API
 
 export default function Navbar() {
 
@@ -9,13 +10,8 @@ export default function Navbar() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/users/me", {
-          credentials: "include"
-        });
-
-        const data = await res.json();
+        const data = await request("/users/me"); // no localhost
         setIsLoggedIn(data.isLoggedIn);
-
       } catch (err) {
         setIsLoggedIn(false);
       }
@@ -24,15 +20,15 @@ export default function Navbar() {
     checkAuth();
   }, []);
 
-  // logout (optional API call)
+  // logout
   const logout = async () => {
-    await fetch("http://localhost:3000/api/users/logout", {
-      method: "POST",
-      credentials: "include"
-    });
-
-    setIsLoggedIn(false);
-    window.location.href = "/login";
+    try {
+      await request("/users/logout", "POST"); // clean API call
+      setIsLoggedIn(false);
+      window.location.href = "/login";
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (

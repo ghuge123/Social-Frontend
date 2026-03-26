@@ -1,9 +1,9 @@
-const BASE_URL = "http://localhost:3000/api";
+const BASE_URL = "https://social-backend-2pe5.onrender.com";
 
 export const request = async (url, method = "GET", body = null, isForm = false) => {
   const options = {
     method,
-    credentials: "include", // 🔥 IMPORTANT for cookies
+    credentials: "include", // IMPORTANT for cookies
     headers: {}
   };
 

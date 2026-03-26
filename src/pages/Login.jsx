@@ -29,7 +29,7 @@ export default function Login() {
             Login
           </Button>
 
-          {/* 🔥 IMPORTANT LINE */}
+          {/* IMPORTANT LINE */}
           <p className="mt-3 text-center">
             Don't have an account? <a href="/signup">Signup</a>
           </p>
