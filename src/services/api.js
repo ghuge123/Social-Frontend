@@ -1,4 +1,4 @@
-const BASE_URL = "https://social-backend-2pe5.onrender.com";
+const BASE_URL = "https://social-backend-2pe5.onrender.com/api";
 
 export const request = async (url, method = "GET", body = null, isForm = false) => {
   const options = {
